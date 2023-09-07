@@ -21,7 +21,7 @@ public class RandomGen {
 			int r = random.nextInt(s.length());
 			sb.append(s.charAt(r));
 		}
-		SystemClock.sleep(10000);
+		SystemClock.sleep(5000);
 		return sb.toString();
 	}
 }

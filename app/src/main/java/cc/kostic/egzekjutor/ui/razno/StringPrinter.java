@@ -2,6 +2,7 @@ package cc.kostic.egzekjutor.ui.razno;
 
 import android.util.Log;
 
+import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -15,12 +16,14 @@ public class StringPrinter {
 	// https://medium.com/android-news/executor-framework-understanding-the-basics-43d575e72310
 	// https://www.baeldung.com/java-executor-service-tutorial
 
+	//	https://www.baeldung.com/java-executor-service-tutorial
+	//	https://www.baeldung.com/java-fork-join
 
 //	private final ThreadPoolExecutor executor = new ThreadPoolExecutor(2, 2, 0, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>());
 	private final ExecutorService executor = Executors.newSingleThreadExecutor();
 
 	public void printString() {
-		for (int i = 1; i <= 6; i++) {
+		for (int i = 1; i <= 4; i++) {
 			executor.execute(getRunnable(i));
 		}
 	}
